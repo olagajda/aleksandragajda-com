@@ -63,7 +63,7 @@ var Application = function() {
 
         var letter = $(".letter");
 
-        letter.one("mouseenter", function(){
+        letter.on("mouseenter", function(){
 
             $(this).toggleClass("three-d");
         });
@@ -72,9 +72,36 @@ var Application = function() {
 
     function chooseOption() {
 
-        var optionButton = $(".game");
+        var optionButton = $(".option-button");
+        var letters = $(".letter");
+
 
         optionButton.on("click", function(){
+
+            letters.off();
+
+            switch($(this).data("option")) {
+
+                case "rotate":
+                    rotateLetter();
+                    break;
+                case "color":
+                    colorLetter();
+                    break;
+                case "turn":
+                    turnLetter();
+                    break;
+                case "scale":
+                    scaleLetter();
+                    break;
+                case "three-d":
+                    threeDLetter();
+                    break;
+                default:
+                    console.log("Something didn't work.");
+            }
+
+
 
             optionButton.removeClass("active");
             $(this).addClass("active");
@@ -91,11 +118,6 @@ var Application = function() {
 
     return {
         mainContainerHeight:mainContainerHeight,
-        rotateLetter:rotateLetter,
-        colorLetter:colorLetter,
-        turnLetter:turnLetter,
-        scaleLetter:scaleLetter,
-        threeDLetter:threeDLetter,
         chooseOption:chooseOption
 
     };
@@ -110,11 +132,6 @@ $(function() {
 
     var app = new Application();
     app.mainContainerHeight();
-    //app.rotateLetter();
-    //app.colorLetter();
-    //app.turnLetter();
-    //app.scaleLetter();
-    //app.threeDLetter();
     app.chooseOption();
 
 
