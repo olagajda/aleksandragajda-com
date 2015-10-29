@@ -1,0 +1,43 @@
+@import "fonts";
+@import "variables";
+@import "functions";
+@import "mixins";
+
+* {
+  font-family: $font-light;
+  box-sizing: border-box;
+}
+
+/* columns */
+
+[class*="col-"] {
+  float: left;
+  min-height: 1px;
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    width: col-width($i);
+  }
+}
+
+.row:before,
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* content */
+
+
+.main-container {
+  position: relative
+}
+
+h1 {
+  font-size: 160px; //TODO change to 200 later
+  margin: 0 auto;
+  text-align: center;
+  @include vertical-align();
+}
