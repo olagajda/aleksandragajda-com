@@ -20,8 +20,14 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'old_standard_ttregular';
+  src: url("../fonts/oldstandard-regular-webfont.eot");
+  src: url("../fonts/oldstandard-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/oldstandard-regular-webfont.woff2") format("woff2"), url("../fonts/oldstandard-regular-webfont.woff") format("woff"), url("../fonts/oldstandard-regular-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 * {
-  font-family: "oswaldlight", sans-serif;
   box-sizing: border-box;
 }
 
@@ -89,19 +95,25 @@
 /* content */
 .main-container {
   position: relative;
+  font-family: "oswaldlight", sans-serif;
 }
 
 /* buttons */
 ul {
   position: absolute;
-  padding-top: 3%;
+  padding-top: .2%;
   width: 100%;
   font-size: 30px;
-  z-index: 1;
+  z-index: 2;
 }
 ul li {
   display: inline-block;
-  padding: 0 1%;
+  padding: 1.5% 1%;
+  cursor: default;
+  font-family: "oswald_regularregular", sans-serif;
+}
+ul li:last-child {
+  float: right;
 }
 
 .option-button:hover {
@@ -114,9 +126,11 @@ ul li {
 
 /* name */
 .letters-all {
-  font-size: 160px;
+  font-size: 170px;
   margin: 0 auto;
   text-align: center;
+  z-index: 1;
+  font-family: "old_standard_ttregular", serif;
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -127,8 +141,10 @@ ul li {
 .letter {
   display: inline-block;
   width: auto;
+  cursor: default;
 }
 
+/* animations */
 .rotate {
   animation-name: rotate;
   animation-duration: 2s;
@@ -153,7 +169,7 @@ ul li {
 .turn {
   animation-name: turn;
   animation-duration: 2s;
-  animation-iteration-count: 2;
+  animation-iteration-count: 1;
   animation-timing-function: linear;
 }
 
@@ -196,6 +212,43 @@ ul li {
   100% {
     text-shadow: 5px 0 0 red, -3px 0 0 aquamarine, -5px 0 0 turquoise;
   }
+}
+.no-animation {
+  animation: none;
+}
+
+/* get to know me*/
+.portrait {
+  position: absolute;
+  top: 13%;
+  height: 41%;
+  left: 9%;
+  opacity: .6;
+  display: none;
+}
+
+.edu, .skills, .experience {
+  font-family: "oswaldlight", sans-serif;
+  font-size: 1.5em;
+  position: absolute;
+  opacity: .7;
+  display: none;
+  bottom: 13%;
+  left: 20%;
+}
+
+.skills {
+  bottom: 60%;
+  left: 30%;
+}
+
+.experience {
+  bottom: 15%;
+  left: 40%;
+}
+
+dt {
+  font-family: "oswaldbold", sans-serif;
 }
 
 /*# sourceMappingURL=style.css.map */

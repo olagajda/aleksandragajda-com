@@ -9,18 +9,6 @@ var Application = function() {
         mainContainer.css("height", windowHeight);
     }
 
-    function rotateLetter() {
-
-        var letter = $(".letter");
-
-        letter.on("mouseenter", function(){
-
-            $(this).toggleClass("rotate");
-        });
-
-
-    }
-
     function colorLetter() {
 
         var letter = $(".letter");
@@ -39,6 +27,18 @@ var Application = function() {
         });
     }
 
+    function rotateLetter() {
+
+        var letter = $(".letter");
+
+        letter.on("mouseenter", function(){
+
+            $(this).toggleClass("rotate");
+
+        });
+    }
+
+
     function turnLetter() {
 
         var letter = $(".letter");
@@ -47,6 +47,8 @@ var Application = function() {
 
             $(this).toggleClass("turn");
         });
+
+
     }
 
     function scaleLetter() {
@@ -57,6 +59,7 @@ var Application = function() {
 
             $(this).toggleClass("scale");
         });
+
     }
 
     function threeDLetter() {
@@ -65,9 +68,51 @@ var Application = function() {
 
         letter.on("mouseenter", function(){
 
-            $(this).toggleClass("three-d");
+            $(this).addClass("three-d");
         });
+
+
     }
+
+
+    function knowMe() {
+
+
+        $(".letter-1").on("mouseenter", function(){
+            $(".portrait").fadeIn(1000);
+        });
+        $(".letter-1").on("mouseleave", function(){
+            $(".portrait").fadeOut();
+        });
+
+        $(".letter-3").on("mouseenter", function(){
+            $(".edu").fadeIn(1000);
+        });
+        $(".letter-3").on("mouseleave", function(){
+            $(".edu").fadeOut();
+        });
+
+        $(".letter-5").on("mouseenter", function(){
+            $(".skills").fadeIn(1000);
+        });
+        $(".letter-5").on("mouseleave", function(){
+            $(".skills").fadeOut();
+        });
+
+        $(".letter-7").on("mouseenter", function(){
+            $(".experience").fadeIn(1000);
+        });
+        $(".letter-7").on("mouseleave", function(){
+            $(".experience").fadeOut();
+        });
+
+
+    }
+
+
+
+
+
 
 
     function chooseOption() {
@@ -77,6 +122,7 @@ var Application = function() {
 
 
         optionButton.on("click", function(){
+
 
             letters.off();
 
@@ -97,8 +143,11 @@ var Application = function() {
                 case "three-d":
                     threeDLetter();
                     break;
+                case "know-me":
+                    knowMe();
+                    break;
                 default:
-                    console.log("Something didn't work.");
+                    console.log("Something didn't work just right.");
             }
 
 
@@ -118,14 +167,11 @@ var Application = function() {
 
     return {
         mainContainerHeight:mainContainerHeight,
-        chooseOption:chooseOption
+        chooseOption:chooseOption,
 
     };
 
 };
-
-
-
 
 
 $(function() {

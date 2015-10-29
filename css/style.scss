@@ -4,7 +4,6 @@
 @import "mixins";
 
 * {
-  font-family: $font-light;
   box-sizing: border-box;
 }
 
@@ -39,7 +38,8 @@
 
 
 .main-container {
-  position: relative
+  position: relative;
+  font-family: $font-light;
 }
 
 /* buttons */
@@ -47,14 +47,18 @@
 
 ul {
   position: absolute;
-  padding-top: 3%;
+  padding-top: .2%;
   width: 100%;
   font-size: 30px;
-  z-index: 1;
+  z-index: 2;
   li {
     display: inline-block;
-    padding: 0 1%;
-
+    padding: 1.5% 1%;
+    cursor: default;
+    font-family: $font-main;
+    &:last-child {
+      float: right;
+    }
   }
 }
 
@@ -64,23 +68,28 @@ ul {
 
 .active {
   background-color: hotpink;
+  //text-decoration: underline;
 }
 
 
 /* name */
 
 .letters-all {
-  font-size: 160px; //TODO change to 200 later
+  font-size: 170px; //TODO change to 200 later
   margin: 0 auto;
   text-align: center;
+  z-index: 1;
+  font-family: $font-serif;
   @include vertical-align();
 }
-
 
 .letter {
   display: inline-block;
   width: auto;
+  cursor: default;
 }
+
+/* animations */
 
 .rotate {
   animation-name: rotate;
@@ -88,7 +97,6 @@ ul {
   animation-iteration-count: 1;
   animation-timing-function: linear;
 }
-
 @keyframes rotate {
   0% {
     transform: rotateZ(0deg);
@@ -104,16 +112,12 @@ ul {
   }
 }
 
-
-
-
 .turn {
   animation-name: turn;
   animation-duration: 2s;
-  animation-iteration-count: 2;
+  animation-iteration-count: 1;
   animation-timing-function: linear;
 }
-
 @keyframes turn {
   0% {
     transform: rotate(0deg);
@@ -131,7 +135,6 @@ ul {
   animation-timing-function: linear;
   animation-direction: alternate;
 }
-
 @keyframes scale {
   0% {
     transform: scale(1);
@@ -149,7 +152,6 @@ ul {
   animation-timing-function: linear;
   animation-direction: alternate;
 }
-
 @keyframes three-d {
   0% {
     text-shadow: 0 0 white;
@@ -158,4 +160,49 @@ ul {
     text-shadow: 5px 0 0 red, -3px 0 0 aquamarine, -5px 0 0 turquoise;
   }
 }
+
+.no-animation {
+  animation: none;
+}
+
+/* get to know me*/
+
+.portrait {
+  position: absolute;
+  top: 13%;
+  height: 41%;
+  left: 9%;
+  opacity: .6;
+  display: none;
+}
+
+.edu {
+  font-family: $font-light;
+  font-size: 1.5em;
+  position: absolute;
+  opacity: .7;
+  display: none;
+  bottom: 13%;
+  left: 20%;
+}
+
+.skills {
+  @extend .edu;
+  bottom: 60%;
+  left: 30%;
+
+}
+
+.experience {
+  @extend .edu;
+  bottom: 15%;
+  left: 40%;
+
+}
+
+dt {
+  font-family: $font-bold;
+}
+
+
 
