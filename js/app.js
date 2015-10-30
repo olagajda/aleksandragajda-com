@@ -33,7 +33,20 @@ var Application = function() {
 
         letter.on("mouseenter", function(){
 
+            var oldOne = $(this);
+            var clone = oldOne.clone();
+
             $(this).toggleClass("rotate");
+
+            setTimeout(function(){
+                $(this).removeClass("rotate");
+                //$(this).before(clone);
+                //$("." + oldOne.attr("class") + ":last").remove();
+            }, 3000);
+
+
+
+
 
         });
     }
@@ -46,7 +59,12 @@ var Application = function() {
         letter.on("mouseenter", function(){
 
             $(this).toggleClass("turn");
+
+            setTimeout(function(){
+                $(this).removeClass("turn");
+            }, 2000);
         });
+
 
 
     }
@@ -58,7 +76,12 @@ var Application = function() {
         letter.on("mouseenter", function(){
 
             $(this).toggleClass("scale");
+            setTimeout(function(){
+                $(this).removeClass("scale");
+            }, 2000);
         });
+
+
 
     }
 
@@ -68,8 +91,13 @@ var Application = function() {
 
         letter.on("mouseenter", function(){
 
-            $(this).addClass("three-d");
+            $(this).toggleClass("three-d");
+
+            setTimeout(function(){
+                $(this).removeClass("three-d");
+            }, 2000);
         });
+
 
 
     }
@@ -119,12 +147,25 @@ var Application = function() {
 
         var optionButton = $(".option-button");
         var letters = $(".letter");
+        var allLettersCode = "<div class='letter letter-1'>A</div><div class='letter letter-2'>l</div><div class='letter letter-3'>e</div><div class='letter letter-4'>k</div><div class='letter letter-5'>s</div><div class='letter letter-6'>a</div><div class='letter letter-7'>n</div><div class='letter letter-8'>d</div><div class='letter letter-9'>r</div><div class='letter letter-10'>a</div> <div class='letter letter-11'>G</div><div class='letter letter-12'>a</div><div class='letter letter-13'>j</div><div class='letter letter-14'>d</div><div class='letter letter-15'>a</div>";
 
 
         optionButton.on("click", function(){
 
 
-            letters.off();
+            //letters.off();
+
+            //setTimeout(function(){
+            //    letters.remove();
+            //    $(".letters-all").html(allLettersCode);
+            //    console.log("yellow!")
+            //}, 3000);
+
+            letters.remove();
+            $(".letters-all").html(allLettersCode);
+
+
+
 
             switch($(this).data("option")) {
 
