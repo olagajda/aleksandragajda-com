@@ -27,6 +27,11 @@
   font-weight: normal;
   font-style: normal;
 }
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -96,6 +101,7 @@
 .main-container {
   position: relative;
   font-family: "oswaldlight", sans-serif;
+  height: 100%;
 }
 
 /* buttons */
@@ -227,7 +233,7 @@ ul li:last-child {
   display: none;
 }
 
-.edu, .skills, .experience {
+.edu, .skills, .experience, .git, .contact {
   font-family: "oswaldlight", sans-serif;
   font-size: 1.5em;
   position: absolute;
@@ -247,8 +253,41 @@ ul li:last-child {
   left: 40%;
 }
 
+.git {
+  bottom: 65%;
+  left: 65%;
+}
+
+.sample {
+  height: 70%;
+  position: absolute;
+  bottom: 20%;
+  right: 15%;
+  opacity: .7;
+  display: none;
+}
+
+.bhagaskara {
+  right: 5%;
+  bottom: 10%;
+}
+
+.contact {
+  left: auto;
+  right: 5%;
+  bottom: 20%;
+  text-align: right;
+  font-size: 2rem;
+}
+
+h2,
 dt {
   font-family: "oswaldbold", sans-serif;
+}
+
+span {
+  font-family: "old_standard_ttregular", serif;
+  font-size: 150%;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -3,6 +3,11 @@
 @import "functions";
 @import "mixins";
 
+html, body {
+  height:100%;
+  width: 100%;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -40,6 +45,8 @@
 .main-container {
   position: relative;
   font-family: $font-light;
+  height: 100%;
+
 }
 
 /* buttons */
@@ -197,12 +204,51 @@ ul {
   @extend .edu;
   bottom: 15%;
   left: 40%;
+}
+
+.git {
+  @extend .edu;
+  bottom: 65%;
+  left: 65%;
 
 }
 
+.sample {
+  height: 70%;
+  position: absolute;
+  bottom: 20%;
+  right: 15%;
+  opacity: .7;
+  display: none;
+}
+
+.bhagaskara {
+  right: 5%;
+  bottom: 10%;
+}
+
+.contact {
+  @extend .edu;
+  left: auto;
+  right: 5%;
+  bottom: 20%;
+  text-align: right;
+  font-size: 2rem;
+
+}
+
+
+h2,
 dt {
   font-family: $font-bold;
 }
+
+span {
+  font-family: $font-serif;
+  font-size: 150%;
+}
+
+
 
 
 
