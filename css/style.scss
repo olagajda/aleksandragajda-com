@@ -35,7 +35,15 @@ html, body {
 /* content */
 
 
+/* landing */
 
+.landing {
+  font-family: $font-serif;
+  font-size: 4.4vw; //for landscape
+  //padding
+  height: 100%;
+//border: 1px solid transparent;
+}
 
 
 
@@ -46,17 +54,22 @@ html, body {
   position: relative;
   font-family: $font-light;
   height: 100%;
+  //display: none;
+  white-space: nowrap;
 
 }
 
 /* buttons */
 
+.buttons {
+  display: none;
+}
 
 ul {
   position: absolute;
   padding-top: .2%;
   width: 100%;
-  font-size: 30px;
+  font-size: 2.3vw;
   z-index: 2;
   li {
     display: inline-block;
@@ -82,11 +95,12 @@ ul {
 /* name */
 
 .letters-all {
-  font-size: 170px; //TODO change to 200 later
+  font-size: 22vh; //TODO change to 200 later
   margin: 0 auto;
   text-align: center;
   z-index: 1;
   font-family: $font-serif;
+  display: none;
   @include vertical-align();
 }
 

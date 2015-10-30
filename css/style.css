@@ -98,18 +98,30 @@ html, body {
 }
 
 /* content */
+/* landing */
+.landing {
+  font-family: "old_standard_ttregular", serif;
+  font-size: 4.4vw;
+  height: 100%;
+}
+
 .main-container {
   position: relative;
   font-family: "oswaldlight", sans-serif;
   height: 100%;
+  white-space: nowrap;
 }
 
 /* buttons */
+.buttons {
+  display: none;
+}
+
 ul {
   position: absolute;
   padding-top: .2%;
   width: 100%;
-  font-size: 30px;
+  font-size: 2.3vw;
   z-index: 2;
 }
 ul li {
@@ -132,11 +144,12 @@ ul li:last-child {
 
 /* name */
 .letters-all {
-  font-size: 170px;
+  font-size: 22vh;
   margin: 0 auto;
   text-align: center;
   z-index: 1;
   font-family: "old_standard_ttregular", serif;
+  display: none;
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);

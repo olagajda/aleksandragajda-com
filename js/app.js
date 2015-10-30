@@ -2,6 +2,37 @@ var Application = function() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+    function slideUpLanding() {
+        var windowHeight = $(window).height();
+        var landing = $(".landing");
+        var landingTextHeight = landing.find('.text').height();
+        var buttons = $(".buttons");
+        var name = $(".letters-all");
+
+        landing.css('padding', (windowHeight - landingTextHeight)/2 + 'px 0');
+        $(document).on('scroll', function() {
+            landing.slideUp(1500, function() { $(document).off('scroll'); });
+            buttons.show();
+            name.show();
+        });
+    };
+
+
+
+
+
+
+
     function colorLetter() {
 
         var letter = $(".letter");
@@ -43,17 +74,24 @@ var Application = function() {
             $("." + myClass).fadeOut(fadeTime);
         });
 
-
-        $(".letter-11").on("click", function(){
-            window.open("https://github.com/olagajda", "_blank");
-        });
         letter15.on("mouseenter", function(){
             $(".contact").fadeIn(500);
         });
         letter15.on("mouseleave", function(){
             $(".contact").fadeOut(10000);
         });
-        letter15.on("click", function(){
+
+    }
+
+    function goToGithub() {
+        $(".letter-11").on("click", function(){
+            window.open("https://github.com/olagajda", "_blank");
+            preventDefault();
+        });
+    }
+
+    function mailMe() {
+        $(".letter-15").on("click", function(){
             window.location.href = "mailto:aleksandra.gajda@gmail.com";
         });
     }
@@ -96,6 +134,8 @@ var Application = function() {
                     knowMe("12", "sit-on-chair", 500);
                     knowMe("13", "bhagaskara", 500);
                     knowMe();
+                    goToGithub();
+                    mailMe();
 
                     break;
                 default:
@@ -108,7 +148,8 @@ var Application = function() {
     }
 
     return {
-        chooseOption:chooseOption
+        chooseOption:chooseOption,
+        slideUpLanding:slideUpLanding,
 
     };
 
@@ -119,6 +160,7 @@ $(function() {
 
     var app = new Application();
     app.chooseOption();
+    app.slideUpLanding();
 
 
 
