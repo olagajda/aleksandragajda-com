@@ -122,6 +122,9 @@ var Application = function() {
                 case "scale":
                     animateLetter('scale', 2000);
                     break;
+                case "shine":
+                    animateLetter('shine',3000);
+                    break;
                 case "three-d":
                     animateLetter('three-d', 1500);
                     break;
