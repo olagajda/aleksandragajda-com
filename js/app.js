@@ -1,17 +1,6 @@
 var Application = function() {
 
 
-
-
-
-
-
-
-
-
-
-
-
     function slideUpLanding() {
         var windowHeight = $(window).height();
         var landing = $(".landing");
@@ -25,13 +14,7 @@ var Application = function() {
             buttons.show();
             name.show();
         });
-    };
-
-
-
-
-
-
+    }
 
     function colorLetter() {
 
@@ -47,7 +30,7 @@ var Application = function() {
 
         letter.on("mouseleave", function(){
 
-            $(this).css("color", "black");
+            $(this).css("color", "");
         });
     }
 
@@ -58,6 +41,13 @@ var Application = function() {
             $(this).addClass(style).delay(time).queue(function(){
                 $(this).removeClass(style).dequeue();
             });
+        });
+    }
+
+    function popAll() {
+        var letters = $(".letter");
+        letters.addClass("pop").delay(2000).queue(function(){
+            letters.removeClass("pop").dequeue();
         });
     }
 
@@ -104,6 +94,9 @@ var Application = function() {
 
         optionButton.on("click", function(){
 
+            optionButton.removeClass("active");
+            $(this).addClass("active");
+
 
             letters.off();
 
@@ -128,6 +121,11 @@ var Application = function() {
                 case "three-d":
                     animateLetter('three-d', 1500);
                     break;
+                case "pop": //TODO: take this out from switch to an if-else
+                    $(this).addClass("active");
+                    popAll();
+                    $(".know-me").trigger("click");
+                    break;
                 case "know-me":
                     knowMe("1", "portrait", 1000);
                     knowMe("3", "edu", 1000);
@@ -145,8 +143,8 @@ var Application = function() {
                     console.log("Something didn't work just right.");
             }
 
-            optionButton.removeClass("active");
-            $(this).addClass("active");
+            //optionButton.removeClass("active");
+            //$(this).addClass("active");
         });
     }
 
