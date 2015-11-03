@@ -40,25 +40,17 @@ html, body {
 .landing {
   font-family: $font-serif;
   font-size: 4.7vw; //for landscape
-  //padding
-  height: 1000px;
-//border: 1px solid transparent;
+  height: 100%;
 }
 
 .text span {
   text-decoration: underline;
 }
 
-
-
-
 .main-container {
   position: relative;
   font-family: $font-light;
   height: 100%;
-  //display: none;
-  white-space: nowrap;
-
 }
 
 /* buttons */
@@ -83,7 +75,6 @@ ul {
       text-align: right;
     }
   }
-
 }
 
 
@@ -102,26 +93,40 @@ ul {
 
 .active {
   background-color: $myMainPink;
-  //text-decoration: underline;
 }
 
 
 /* name */
 
+
 .letters-all {
-  font-size: 12vw; //TODO change to 200 later
+  font-size: 12vw;
   margin: 0 auto;
   text-align: center;
   z-index: 1;
   font-family: $font-serif;
   display: none;
-  @include vertical-align();
 }
-
 .letter {
   display: inline-block;
   width: auto;
   cursor: default;
+}
+
+
+.letters-desktop {
+  @include vertical-align();
+  //display: none;
+}
+
+
+.letters-mobile {
+  @include vertical-align();
+  display: none;
+}
+
+.transparent {
+  opacity: .15;
 }
 
 /* animations */
@@ -286,6 +291,22 @@ ul {
   left:60%;
 }
 
+.git-mobile {
+  @extend .git;
+  span {
+    font-family: $font-light;
+    font-size: inherit;
+    text-decoration: underline;
+  }
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    text-decoration: underline;
+    color: black;
+  }
+}
+
 .sample {
   width: 65%;
   position: absolute;
@@ -308,18 +329,21 @@ ul {
   text-align: right;
 }
 
+.contact-mobile {
+  @extend .contact;
+  text-align: left;
+}
 
 h2,
 dt {
   font-family: $font-bold;
 }
-
-.main-container span {
+.know-me-more span {
   font-family: $font-serif;
   font-size: 150%;
 }
 
-
+@import "media-queries";
 
 
 

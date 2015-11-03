@@ -27,7 +27,7 @@ var Application = function() {
             name.show();
 
             setTimeout(function(){
-               firstOption.trigger("click")
+                firstOption.trigger("click")
             }, 1000)
         });
     }
@@ -86,6 +86,35 @@ var Application = function() {
         letter15.on("mouseleave", function(){
             $(".contact").fadeOut(10000);
         });
+    }
+
+    function knowMeMobile(letterNo, myClass) {
+
+        var letter = $(".letter-" + letterNo);
+        var letters = $(".letters-all");
+        var letter15 = $(".letter-15");
+        var isVisible = 0;
+
+        letter.on("click", function(){
+            letters.addClass("transparent");
+            $("." + myClass).show();
+            isVisible = 1
+            return false;
+
+        });
+
+        $(document).on("click", function(){
+            if (isVisible === 1) {
+                $("." + myClass).hide();
+                letters.removeClass("transparent");
+                isVisible = 0;
+            }
+        });
+
+
+
+
+
 
     }
 
@@ -140,23 +169,40 @@ var Application = function() {
                     break;
                 case "pop":
                     popAll();
-                   setTimeout(function(){$(".know-me").trigger("click")}, 2000);
+                    setTimeout(function(){$(".know-me").trigger("click")}, 2000);
                     break;
                 case "know-me":
+
                     instruction.show();
                     setTimeout(function(){
                         instruction.hide();
                     }, 5000);
-                    knowMe("1", "portrait", 1000);
-                    knowMe("3", "edu", 1000);
-                    knowMe("5", "skills", 1000);
-                    knowMe("7", "experience", 1000);
-                    knowMe("11", "git", 1000);
-                    knowMe("12", "sit-on-chair", 500);
-                    knowMe("13", "bhagaskara", 500);
-                    knowMe();
-                    goToGithub();
-                    mailMe();
+
+                    if ($(".letters-desktop").css("display") === "none") {
+
+                        knowMeMobile("1", "portrait");
+                        knowMeMobile("3", "edu");
+                        knowMeMobile("5", "skills");
+                        knowMeMobile("7", "experience");
+                        knowMeMobile("11", "git-mobile");
+                        knowMeMobile("12", "sit-on-chair");
+                        knowMeMobile("13", "bhagaskara");
+                        knowMeMobile("15", "contact-mobile");
+                        //goToGithub();
+                        //mailMe();
+                    }
+                    else {
+                        knowMe("1", "portrait", 1000);
+                        knowMe("3", "edu", 1000);
+                        knowMe("5", "skills", 1000);
+                        knowMe("7", "experience", 1000);
+                        knowMe("11", "git", 1000);
+                        knowMe("12", "sit-on-chair", 500);
+                        knowMe("13", "bhagaskara", 500);
+                        knowMe();
+                        goToGithub();
+                        mailMe();
+                    }
 
                     break;
                 default:

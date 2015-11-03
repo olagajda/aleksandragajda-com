@@ -102,7 +102,7 @@ html, body {
 .landing {
   font-family: "old_standard_ttregular", serif;
   font-size: 4.7vw;
-  height: 1000px;
+  height: 100%;
 }
 
 .text span {
@@ -113,7 +113,6 @@ html, body {
   position: relative;
   font-family: "oswaldlight", sans-serif;
   height: 100%;
-  white-space: nowrap;
 }
 
 /* buttons */
@@ -164,6 +163,15 @@ ul li:last-child {
   z-index: 1;
   font-family: "old_standard_ttregular", serif;
   display: none;
+}
+
+.letter {
+  display: inline-block;
+  width: auto;
+  cursor: default;
+}
+
+.letters-desktop {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -171,10 +179,17 @@ ul li:last-child {
   transform: translateY(-50%);
 }
 
-.letter {
-  display: inline-block;
-  width: auto;
-  cursor: default;
+.letters-mobile {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  display: none;
+}
+
+.transparent {
+  opacity: .15;
 }
 
 /* animations */
@@ -304,7 +319,7 @@ ul li:last-child {
   display: none;
 }
 
-.edu, .skills, .experience, .git, .contact {
+.edu, .skills, .experience, .git, .git-mobile, .contact, .contact-mobile {
   font-family: "oswaldlight", sans-serif;
   font-size: 2vw;
   position: absolute;
@@ -324,9 +339,22 @@ ul li:last-child {
   left: 40%;
 }
 
-.git {
+.git, .git-mobile {
   bottom: 65%;
   left: 60%;
+}
+
+.git-mobile span {
+  font-family: "oswaldlight", sans-serif;
+  font-size: inherit;
+  text-decoration: underline;
+}
+.git-mobile a:link,
+.git-mobile a:visited,
+.git-mobile a:hover,
+.git-mobile a:active {
+  text-decoration: underline;
+  color: black;
 }
 
 .sample {
@@ -343,11 +371,15 @@ ul li:last-child {
   bottom: 10%;
 }
 
-.contact {
+.contact, .contact-mobile {
   left: auto;
   right: 5%;
   bottom: 20%;
   text-align: right;
+}
+
+.contact-mobile {
+  text-align: left;
 }
 
 h2,
@@ -355,9 +387,94 @@ dt {
   font-family: "oswaldbold", sans-serif;
 }
 
-.main-container span {
+.know-me-more span {
   font-family: "old_standard_ttregular", serif;
   font-size: 150%;
+}
+
+@media only screen and (orientation: portrait) {
+  .letters-desktop {
+    display: none;
+  }
+
+  .letters-mobile {
+    display: block;
+  }
+
+  .landing {
+    font-size: 5vh;
+  }
+
+  ul {
+    position: relative;
+    font-size: 4vh;
+  }
+  ul li:last-child {
+    width: 100%;
+    float: left;
+    text-align: left;
+  }
+
+  .instruction {
+    width: 100%;
+    font-size: 3vh;
+    padding: 13% 1% 0;
+    text-align: left;
+    float: left;
+  }
+
+  .letters-all {
+    font-size: 20vh;
+  }
+
+  /* get to know me*/
+  .know-me-more {
+    width: 100%;
+  }
+
+  .portrait {
+    height: 80%;
+    bottom: 0;
+    opacity: .8;
+  }
+
+  .sample {
+    width: 100%;
+    opacity: 0.95;
+    right: 0;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .edu, .skills, .experience, .git, .git-mobile, .contact, .contact-mobile,
+  .skills,
+  .experience,
+  .git,
+  .git-mobile,
+  .contact,
+  .contact-mobile {
+    font-family: "oswaldlight", sans-serif;
+    font-size: 5vh;
+    width: 100%;
+    position: absolute;
+    opacity: 1;
+    display: none;
+    bottom: 1%;
+    left: 1%;
+  }
+
+  h2,
+  dt {
+    font-family: "oswaldbold", sans-serif;
+  }
+
+  .know-me-more span {
+    font-family: "old_standard_ttregular", serif;
+    font-size: 150%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,131 @@
+//for wide screens:
+
+
+
+@media only screen and (orientation: portrait) {
+
+  .letters-desktop {
+    display: none;
+  }
+
+
+  .letters-mobile {
+    display: block;
+  }
+
+  .landing {
+    font-size: 5vh; //for portrait
+  }
+
+  ul {
+    position: relative;
+    font-size: 4vh;
+    li:last-child {
+      width: 100%;
+      float: left;
+      text-align: left;
+    }
+  }
+
+  .instruction {
+    width: 100%;
+    font-size: 3vh;
+    padding: 13% 1% 0;
+    text-align: left;
+    float: left;
+  }
+
+  .letters-all {
+    font-size: 20vh;
+  }
+
+  /* get to know me*/
+
+  .know-me-more {
+    width: 100%;
+  }
+
+  .portrait {
+    height: 80%;
+    bottom: 0;
+    opacity: .8;
+  }
+
+  .sample {
+    width: 100%;
+    opacity: 0.95;
+    right: 0;
+    @include vertical-align();
+
+  }
+
+  .edu,
+  .skills,
+  .experience,
+  .git,
+  .contact{
+    font-family: $font-light;
+    font-size: 5vh;
+    width: 100%;
+    position: absolute;
+    opacity: 1;
+    display: none;
+    bottom: 1%;
+    left: 1%;
+  }
+  //
+  //.skills {
+  //  @extend .edu;
+  //  bottom: 60%;
+  //  left: 30%;
+  //
+  //}
+  //
+  //.experience {
+  //  @extend .edu;
+  //  bottom: 15%;
+  //  left: 40%;
+  //}
+  //
+  //.git {
+  //  @extend .edu;
+  //  bottom: 65%;
+  //  left:60%;
+  //}
+  //
+  //.sample {
+  //  width: 65%;
+  //  position: absolute;
+  //  bottom: 20%;
+  //  right: 15%;
+  //  opacity: .7;
+  //  display: none;
+  //}
+  //
+  //.bhagaskara {
+  //  right: 5%;
+  //  bottom: 10%;
+  //}
+  //
+  //.contact {
+  //  @extend .edu;
+  //  left: auto;
+  //  right: 5%;
+  //  bottom: 20%;
+  //  text-align: right;
+  //}
+
+
+  h2,
+  dt {
+    font-family: $font-bold;
+  }
+  .know-me-more span {
+    font-family: $font-serif;
+    font-size: 150%;
+  }
+
+
+
+}
+
