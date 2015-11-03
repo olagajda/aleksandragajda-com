@@ -7,12 +7,28 @@ var Application = function() {
         var landingTextHeight = landing.find('.text').height();
         var buttons = $(".buttons");
         var name = $(".letters-all");
+        var firstOption = $(".move");
 
         landing.css('padding', (windowHeight - landingTextHeight)/2 + 'px 0');
-        $(document).on('scroll', function() {
-            landing.slideUp(1500, function() { $(document).off('scroll'); });
+
+        $(document).one('scroll', function() {
+            $('html, body').animate({
+
+                scrollTop: $(".main-container").offset().top
+            }, 1000);
+
+            setTimeout(function(){
+                landing.hide();
+            }, 1000);
+
+            $(document).off("scroll");
+
             buttons.show();
             name.show();
+
+            setTimeout(function(){
+               firstOption.trigger("click")
+            }, 1000)
         });
     }
 
@@ -82,7 +98,7 @@ var Application = function() {
 
     function mailMe() {
         $(".letter-15").on("click", function(){
-            window.location.href = "mailto:aleksandra.gajda@gmail.com";
+            window.location.href = "mailto:hello@aleksandragajda.com";
         });
     }
 
@@ -90,12 +106,14 @@ var Application = function() {
 
         var optionButton = $(".option-button");
         var letters = $(".letter");
+        var instruction = $(".instruction");
 
 
         optionButton.on("click", function(){
 
             optionButton.removeClass("active");
             $(this).addClass("active");
+            instruction.hide();
 
 
             letters.off();
@@ -107,7 +125,6 @@ var Application = function() {
                     break;
                 case "color":
                     colorLetter();
-                    //animateLetter('color');
                     break;
                 case "turn":
                     animateLetter('turn', 2000);
@@ -121,12 +138,15 @@ var Application = function() {
                 case "three-d":
                     animateLetter('three-d', 1500);
                     break;
-                case "pop": //TODO: take this out from switch to an if-else
-                    $(this).addClass("active");
+                case "pop":
                     popAll();
-                    $(".know-me").trigger("click");
+                   setTimeout(function(){$(".know-me").trigger("click")}, 2000);
                     break;
                 case "know-me":
+                    instruction.show();
+                    setTimeout(function(){
+                        instruction.hide();
+                    }, 5000);
                     knowMe("1", "portrait", 1000);
                     knowMe("3", "edu", 1000);
                     knowMe("5", "skills", 1000);
@@ -142,9 +162,6 @@ var Application = function() {
                 default:
                     console.log("Something didn't work just right.");
             }
-
-            //optionButton.removeClass("active");
-            //$(this).addClass("active");
         });
     }
 

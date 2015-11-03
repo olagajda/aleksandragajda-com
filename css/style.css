@@ -102,7 +102,7 @@ html, body {
 .landing {
   font-family: "old_standard_ttregular", serif;
   font-size: 4.7vw;
-  height: 100%;
+  height: 1000px;
 }
 
 .text span {
@@ -136,10 +136,20 @@ ul li {
 }
 ul li:last-child {
   float: right;
+  text-align: right;
 }
 
 .option-button:hover {
   text-decoration: underline;
+}
+
+.instruction {
+  font-size: 1.5vw;
+  padding: 7% 1% 0;
+  width: 100%;
+  text-align: right;
+  position: absolute;
+  display: none;
 }
 
 .active {
@@ -148,7 +158,7 @@ ul li:last-child {
 
 /* name */
 .letters-all {
-  font-size: 22vh;
+  font-size: 12vw;
   margin: 0 auto;
   text-align: center;
   z-index: 1;
@@ -251,10 +261,10 @@ ul li:last-child {
 
 @keyframes shine {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px pink, 0 0 70px pink, 0 0 80px pink, 0 0 100px pink, 0 0 150px pink;
+    text-shadow: 0 0 10px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 60px pink, 0 0 100px pink, 0 0 120px pink, 0 0 150px pink, 0 0 180px pink;
   }
   to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px pink, 0 0 35px pink, 0 0 40px pink, 0 0 50px pink, 0 0 75px pink;
+    text-shadow: 0 0 5px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 30px pink, 0 0 40px pink, 0 0 50px pink, 0 0 60px pink, 0 0 75px pink;
   }
 }
 .pop {
@@ -296,11 +306,11 @@ ul li:last-child {
 
 .edu, .skills, .experience, .git, .contact {
   font-family: "oswaldlight", sans-serif;
-  font-size: 1.5em;
+  font-size: 2vw;
   position: absolute;
   opacity: .7;
   display: none;
-  bottom: 13%;
+  bottom: 10%;
   left: 20%;
 }
 
@@ -316,11 +326,11 @@ ul li:last-child {
 
 .git {
   bottom: 65%;
-  left: 65%;
+  left: 60%;
 }
 
 .sample {
-  height: 70%;
+  width: 65%;
   position: absolute;
   bottom: 20%;
   right: 15%;
@@ -338,7 +348,6 @@ ul li:last-child {
   right: 5%;
   bottom: 20%;
   text-align: right;
-  font-size: 2rem;
 }
 
 h2,
