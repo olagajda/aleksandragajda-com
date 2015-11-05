@@ -2,24 +2,21 @@ var Application = function() {
 
 
 
-    //function whichLanding() {
-    //
-    //    var landingDesktop = $(".landing-desktop");
-    //    var landingMobile = $(".landing-mobile");
-    //
-    //    //$(window).on('resize', function() {
-    //        if ($(window).matchMedia("(orientation: portrait)")) {
-    //            landingDesktop.hide();
-    //            landingMobile.show();
-    //        }
-    //    else {
-    //            landingDesktop.show();
-    //            landingMobile.hide();
-    //        }
-    //    //});
-    //
-    //
-    //}
+    function whichLanding() {
+
+        var landingDesktop = $(".landing-desktop");
+        var landingMobile = $(".landing-mobile");
+
+        if (window.matchMedia("(max-width:740px)").matches) {
+            landingDesktop.hide();
+            landingMobile.show();
+
+        }
+        else {
+            landingDesktop.show();
+            landingMobile.hide();
+        }
+    }
 
 
 
@@ -242,7 +239,7 @@ var Application = function() {
     return {
         chooseOption:chooseOption,
         slideUpLanding:slideUpLanding,
-        //whichLanding:whichLanding
+        whichLanding:whichLanding
 
     };
 
@@ -254,7 +251,7 @@ $(function() {
     var app = new Application();
     app.chooseOption();
     app.slideUpLanding();
-    //app.whichLanding();
+    app.whichLanding();
 
 
 

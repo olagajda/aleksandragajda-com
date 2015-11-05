@@ -737,7 +737,6 @@ dt {
 
   .portrait {
     height: 80%;
-    bottom: 0;
     opacity: .8;
   }
 
@@ -745,11 +744,7 @@ dt {
     width: 100%;
     opacity: 0.95;
     right: 0;
-    position: relative;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    bottom: 10%;
   }
 
   .edu, .skills, .experience, .git, .contact-mobile,
@@ -766,14 +761,11 @@ dt {
     width: 100%;
     height: 100%;
     left: 1%;
-    position: relative;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
     opacity: 1;
     display: none;
     z-index: 2;
+    top: auto;
+    bottom: -50%;
   }
 
   h2,
