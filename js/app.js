@@ -77,19 +77,7 @@ var Application = function() {
         var letter = $(".letter");
         var partName = $(".part-name");
 
-
-        partName.on("swipe", function(){
-            $(this).find(letter).addClass(style).delay(time).queue(function(){
-                $(this).find(letter).removeClass(style).dequeue();
-            });
-        });
-
-
-
-
-
-
-        letter.on("click", function(){
+        letter.on("mouseenter", function(){
             $(this).addClass(style).delay(time).queue(function(){
                 $(this).removeClass(style).dequeue();
             });
@@ -131,20 +119,32 @@ var Application = function() {
         var letter15 = $(".letter-15");
         var isVisible = 0;
 
-        letter.on("click", function(){
-            letters.addClass("transparent");
-            $("." + myClass).show();
-            isVisible = 1;
-            return false;
 
-        });
 
-        $(document).on("click", function(){
+        $("." + myClass).on("click", function(){
             if (isVisible === 1) {
                 $("." + myClass).hide();
                 letters.removeClass("transparent");
                 isVisible = 0;
+                return false;
             }
+        });
+
+        letter.on("click", function(){
+
+            $(".hide-me").hide();
+            letters.addClass("transparent");
+            $("." + myClass).show().addClass("visible");
+            isVisible = 1;
+            return false;
+        });
+
+        $(document).on("click", function(event){
+
+                $("." + myClass).hide();
+                letters.removeClass("transparent");
+                isVisible = 0;
+                return false;
         });
     }
 
@@ -218,8 +218,6 @@ var Application = function() {
                         knowMeMobile("12", "sit-on-chair");
                         knowMeMobile("13", "bhagaskara");
                         knowMeMobile("15", "contact-mobile");
-                        //goToGithub();
-                        //mailMe();
                     }
                     else {
                         knowMe("1", "portrait", 1000);

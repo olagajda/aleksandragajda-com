@@ -492,13 +492,9 @@ ul {
   left:60%;
 }
 
+.contact-mobile,
 .git-mobile {
   @extend .git;
-  span {
-    font-family: $font-light;
-    font-size: inherit;
-    text-decoration: underline;
-  }
   a:link,
   a:visited,
   a:hover,
