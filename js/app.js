@@ -1,6 +1,28 @@
 var Application = function() {
 
 
+
+    //function whichLanding() {
+    //
+    //    var landingDesktop = $(".landing-desktop");
+    //    var landingMobile = $(".landing-mobile");
+    //
+    //    //$(window).on('resize', function() {
+    //        if ($(window).matchMedia("(orientation: portrait)")) {
+    //            landingDesktop.hide();
+    //            landingMobile.show();
+    //        }
+    //    else {
+    //            landingDesktop.show();
+    //            landingMobile.hide();
+    //        }
+    //    //});
+    //
+    //
+    //}
+
+
+
     function slideUpLanding() {
         var windowHeight = $(window).height();
         var landing = $(".landing");
@@ -17,9 +39,9 @@ var Application = function() {
                 scrollTop: $(".main-container").offset().top
             }, 1000);
 
-            setTimeout(function(){
-                landing.hide();
-            }, 1000);
+            //setTimeout(function(){
+            //    landing.hide();
+            //}, 1000);
 
             $(document).off("scroll");
 
@@ -53,7 +75,21 @@ var Application = function() {
 
     function animateLetter(style, time) {
         var letter = $(".letter");
-        letter.on("mouseenter", function(){
+        var partName = $(".part-name");
+
+
+        partName.on("swipe", function(){
+            $(this).find(letter).addClass(style).delay(time).queue(function(){
+                $(this).find(letter).removeClass(style).dequeue();
+            });
+        });
+
+
+
+
+
+
+        letter.on("click", function(){
             $(this).addClass(style).delay(time).queue(function(){
                 $(this).removeClass(style).dequeue();
             });
@@ -98,7 +134,7 @@ var Application = function() {
         letter.on("click", function(){
             letters.addClass("transparent");
             $("." + myClass).show();
-            isVisible = 1
+            isVisible = 1;
             return false;
 
         });
@@ -110,12 +146,6 @@ var Application = function() {
                 isVisible = 0;
             }
         });
-
-
-
-
-
-
     }
 
     function goToGithub() {
@@ -214,6 +244,7 @@ var Application = function() {
     return {
         chooseOption:chooseOption,
         slideUpLanding:slideUpLanding,
+        //whichLanding:whichLanding
 
     };
 
@@ -225,6 +256,7 @@ $(function() {
     var app = new Application();
     app.chooseOption();
     app.slideUpLanding();
+    //app.whichLanding();
 
 
 

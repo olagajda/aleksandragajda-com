@@ -27,6 +27,11 @@
     }
   }
 
+  .option-button:last-of-type {
+    padding: 0;
+    margin: 0;
+  }
+
   .instruction {
     width: 100%;
     font-size: 3vh;
@@ -65,56 +70,14 @@
   .git,
   .contact{
     font-family: $font-light;
-    font-size: 5vh;
+    font-size: 4vh;
     width: 100%;
-    position: absolute;
+    height: 100%;
+    left: 1%;
+    @include vertical-align();
     opacity: 1;
     display: none;
-    bottom: 1%;
-    left: 1%;
   }
-  //
-  //.skills {
-  //  @extend .edu;
-  //  bottom: 60%;
-  //  left: 30%;
-  //
-  //}
-  //
-  //.experience {
-  //  @extend .edu;
-  //  bottom: 15%;
-  //  left: 40%;
-  //}
-  //
-  //.git {
-  //  @extend .edu;
-  //  bottom: 65%;
-  //  left:60%;
-  //}
-  //
-  //.sample {
-  //  width: 65%;
-  //  position: absolute;
-  //  bottom: 20%;
-  //  right: 15%;
-  //  opacity: .7;
-  //  display: none;
-  //}
-  //
-  //.bhagaskara {
-  //  right: 5%;
-  //  bottom: 10%;
-  //}
-  //
-  //.contact {
-  //  @extend .edu;
-  //  left: auto;
-  //  right: 5%;
-  //  bottom: 20%;
-  //  text-align: right;
-  //}
-
 
   h2,
   dt {

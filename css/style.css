@@ -103,6 +103,7 @@ html, body {
   font-family: "old_standard_ttregular", serif;
   font-size: 4.7vw;
   height: 100%;
+  padding-bottom: 1%;
 }
 
 .text span {
@@ -113,6 +114,10 @@ html, body {
   position: relative;
   font-family: "oswaldlight", sans-serif;
   height: 100%;
+}
+
+.landing-mobile {
+  display: none;
 }
 
 /* buttons */
@@ -138,6 +143,11 @@ ul li:last-child {
   text-align: right;
 }
 
+.option-button:last-of-type {
+  padding: 5% 5%;
+  margin: 1%;
+}
+
 .option-button:hover {
   text-decoration: underline;
 }
@@ -160,7 +170,6 @@ ul li:last-child {
   font-size: 12vw;
   margin: 0 auto;
   text-align: center;
-  z-index: 1;
   font-family: "old_standard_ttregular", serif;
   display: none;
 }
@@ -172,6 +181,7 @@ ul li:last-child {
 }
 
 .letters-desktop {
+  z-index: 2;
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -702,6 +712,11 @@ dt {
     text-align: left;
   }
 
+  .option-button:last-of-type {
+    padding: 0;
+    margin: 0;
+  }
+
   .instruction {
     width: 100%;
     font-size: 3vh;
@@ -744,13 +759,17 @@ dt {
   .contact,
   .contact-mobile {
     font-family: "oswaldlight", sans-serif;
-    font-size: 5vh;
+    font-size: 4vh;
     width: 100%;
-    position: absolute;
+    height: 100%;
+    left: 1%;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
     opacity: 1;
     display: none;
-    bottom: 1%;
-    left: 1%;
   }
 
   h2,
