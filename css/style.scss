@@ -41,7 +41,7 @@ html, body {
   font-family: $font-serif;
   font-size: 4.7vw; //for landscape
   height: 100%;
-  padding-bottom: 1%;
+  margin-bottom: 10%;
 }
 
 .text span {
@@ -325,6 +325,11 @@ ul {
   }
 }
 
+.three-d-mobile {
+  text-shadow: 5px 0 0 red, -3px 0 0 aquamarine, -5px 0 0 turquoise;
+
+}
+
 .no-animation {
   animation: none;
 }
@@ -365,6 +370,12 @@ ul {
   to {
     text-shadow: 0 0 5px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 30px $myPink, 0 0 40px $myPink, 0 0 50px $myPink, 0 0 60px $myPink, 0 0 75px $myPink;
   }
+}
+
+.shine-mobile {
+  color: white;
+  text-shadow: 0 0 5px #fff, 0 0 30px $myPink, 0 0 40px $myPink, 0 0 50px $myPink, 0 0 60px $myPink, 0 0 75px $myPink;
+
 }
 
 .pop {

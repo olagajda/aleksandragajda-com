@@ -143,7 +143,19 @@ var Application = function() {
                 isVisible = 0;
                 return false;
         });
+
+
+        $(window).on("orientationchange",function(){
+
+            $(".know-me").trigger("click");
+
+
+        });
+
+
     }
+
+
 
     function goToGithub() {
         $(".letter-11").on("click", function(){
@@ -189,10 +201,21 @@ var Application = function() {
                     animateLetter('scale', 2000);
                     break;
                 case "shine":
-                    animateLetter('shine',3000);
+                    if (window.matchMedia("(max-width:740px)").matches) {
+                        animateLetter(("shine-mobile"), 1500);
+                    }
+                    else {
+                        animateLetter('shine',3000);
+                    }
+
                     break;
                 case "three-d":
-                    animateLetter('three-d', 1500);
+                    if (window.matchMedia("(max-width:740px)").matches) {
+                        animateLetter(("three-d-mobile"), 500);
+                    }
+                    else {
+                        animateLetter('three-d', 1500);
+                    }
                     break;
                 case "pop":
                     popAll();
@@ -215,18 +238,36 @@ var Application = function() {
                         knowMeMobile("12", "sit-on-chair");
                         knowMeMobile("13", "bhagaskara");
                         knowMeMobile("15", "contact-mobile");
+
                     }
                     else {
-                        knowMe("1", "portrait", 1000);
-                        knowMe("3", "edu", 1000);
-                        knowMe("5", "skills", 1000);
-                        knowMe("7", "experience", 1000);
-                        knowMe("11", "git", 1000);
-                        knowMe("12", "sit-on-chair", 500);
-                        knowMe("13", "bhagaskara", 500);
-                        knowMe();
-                        goToGithub();
-                        mailMe();
+
+
+                        if (window.matchMedia("(max-width:740px)").matches) {
+                            knowMeMobile("1", "portrait");
+                            knowMeMobile("3", "edu");
+                            knowMeMobile("5", "skills");
+                            knowMeMobile("7", "experience");
+                            knowMeMobile("11", "git-mobile");
+                            knowMeMobile("12", "sit-on-chair");
+                            knowMeMobile("13", "bhagaskara");
+                            knowMeMobile("15", "contact-mobile");
+
+
+                        }
+                        else {
+                            knowMe("1", "portrait", 1000);
+                            knowMe("3", "edu", 1000);
+                            knowMe("5", "skills", 1000);
+                            knowMe("7", "experience", 1000);
+                            knowMe("11", "git", 1000);
+                            knowMe("12", "sit-on-chair", 500);
+                            knowMe("13", "bhagaskara", 500);
+                            knowMe();
+                            goToGithub();
+                            mailMe();
+
+                        }
                     }
 
                     break;
