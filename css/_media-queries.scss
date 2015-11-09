@@ -1,6 +1,22 @@
 //for wide screens:
 
 
+@media only screen and (min-width:740px) {
+
+  .edu,
+  .skills,
+  .experience,
+  .git,
+  .contact {
+    z-index: 3;
+    dt,
+    dd,
+    h2,
+    p {
+      background-color: white;
+    }
+  }
+}
 
 @media only screen and (orientation: portrait) {
 
@@ -14,7 +30,7 @@
   }
 
   .landing {
-    font-size: 5vh; //for portrait
+    font-size: 5vh;
   }
 
   ul {
@@ -87,8 +103,5 @@
     font-family: $font-serif;
     font-size: 150%;
   }
-
-
-
 }
 

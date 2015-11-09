@@ -10,7 +10,6 @@ var Application = function() {
         if (window.matchMedia("(max-width:740px)").matches) {
             landingDesktop.hide();
             landingMobile.show();
-
         }
         else {
             landingDesktop.show();
@@ -144,15 +143,10 @@ var Application = function() {
                 return false;
         });
 
-
         $(window).on("orientationchange",function(){
 
             $(".know-me").trigger("click");
-
-
         });
-
-
     }
 
 
@@ -219,7 +213,7 @@ var Application = function() {
                     break;
                 case "pop":
                     popAll();
-                    setTimeout(function(){$(".know-me").trigger("click")}, 2000);
+                    setTimeout(function(){$(".know-me").trigger("click")}, 1975);
                     break;
                 case "know-me":
 

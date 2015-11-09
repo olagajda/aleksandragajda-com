@@ -632,7 +632,7 @@ ul li:last-child {
   position: absolute;
   opacity: .7;
   display: none;
-  bottom: 10%;
+  bottom: 5%;
   left: 20%;
 }
 
@@ -699,6 +699,72 @@ dt {
   font-size: 150%;
 }
 
+@media only screen and (min-width: 740px) {
+  .edu, .skills, .experience, .git, .contact-mobile,
+  .git-mobile, .contact,
+  .skills,
+  .experience,
+  .git,
+  .contact-mobile,
+  .git-mobile,
+  .contact,
+  .contact-mobile {
+    z-index: 3;
+  }
+  .edu dt, .skills dt, .experience dt, .git dt, .contact-mobile dt,
+  .git-mobile dt, .contact dt,
+  .edu dd,
+  .skills dd,
+  .experience dd,
+  .git dd,
+  .contact-mobile dd,
+  .git-mobile dd,
+  .contact dd,
+  .edu h2,
+  .skills h2,
+  .experience h2,
+  .git h2,
+  .contact-mobile h2,
+  .git-mobile h2,
+  .contact h2,
+  .edu p,
+  .skills p,
+  .experience p,
+  .git p,
+  .contact-mobile p,
+  .git-mobile p,
+  .contact p,
+  .skills dt,
+  .skills dd,
+  .skills h2,
+  .skills p,
+  .experience dt,
+  .experience dd,
+  .experience h2,
+  .experience p,
+  .git dt,
+  .contact-mobile dt,
+  .git-mobile dt,
+  .git dd,
+  .contact-mobile dd,
+  .git-mobile dd,
+  .git h2,
+  .contact-mobile h2,
+  .git-mobile h2,
+  .git p,
+  .contact-mobile p,
+  .git-mobile p,
+  .contact dt,
+  .contact-mobile dt,
+  .contact dd,
+  .contact-mobile dd,
+  .contact h2,
+  .contact-mobile h2,
+  .contact p,
+  .contact-mobile p {
+    background-color: white;
+  }
+}
 @media only screen and (orientation: portrait) {
   .letters-desktop {
     display: none;
