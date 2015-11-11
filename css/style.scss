@@ -283,6 +283,10 @@ ul {
   }
 }
 
+.three-d-mobile {
+  text-shadow: 5px 0 0 red, -3px 0 0 aquamarine, -5px 0 0 turquoise;
+}
+
 .three-d {
   @include animation(three-d, .5s, 2, linear, alternate);
 
@@ -323,13 +327,13 @@ ul {
   }
 }
 
-.three-d-mobile {
-  text-shadow: 5px 0 0 red, -3px 0 0 aquamarine, -5px 0 0 turquoise;
-
-}
-
 .no-animation {
   animation: none;
+}
+
+.shine-mobile {
+  color: white;
+  text-shadow: 0 0 5px #fff, 0 0 30px $myPink, 0 0 40px $myPink, 0 0 50px $myPink, 0 0 60px $myPink, 0 0 75px $myPink;
 }
 
 .shine {
@@ -370,11 +374,7 @@ ul {
   }
 }
 
-.shine-mobile {
-  color: white;
-  text-shadow: 0 0 5px #fff, 0 0 30px $myPink, 0 0 40px $myPink, 0 0 50px $myPink, 0 0 60px $myPink, 0 0 75px $myPink;
 
-}
 
 .pop {
 

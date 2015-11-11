@@ -392,6 +392,10 @@ ul li:last-child {
     transform: scale(2);
   }
 }
+.three-d-mobile {
+  text-shadow: 5px 0 0 red, -3px 0 0 aquamarine, -5px 0 0 turquoise;
+}
+
 .three-d {
   -webkit-animation-name: three-d;
   -webkit-animation-duration: 0.5s;
@@ -447,12 +451,13 @@ ul li:last-child {
     text-shadow: 5px 0 0 red, -3px 0 0 aquamarine, -5px 0 0 turquoise;
   }
 }
-.three-d-mobile {
-  text-shadow: 5px 0 0 red, -3px 0 0 aquamarine, -5px 0 0 turquoise;
-}
-
 .no-animation {
   animation: none;
+}
+
+.shine-mobile {
+  color: white;
+  text-shadow: 0 0 5px #fff, 0 0 30px pink, 0 0 40px pink, 0 0 50px pink, 0 0 60px pink, 0 0 75px pink;
 }
 
 .shine {
@@ -511,11 +516,6 @@ ul li:last-child {
     text-shadow: 0 0 5px #fff, 0 0 15px #fff, 0 0 20px #fff, 0 0 30px pink, 0 0 40px pink, 0 0 50px pink, 0 0 60px pink, 0 0 75px pink;
   }
 }
-.shine-mobile {
-  color: white;
-  text-shadow: 0 0 5px #fff, 0 0 30px pink, 0 0 40px pink, 0 0 50px pink, 0 0 60px pink, 0 0 75px pink;
-}
-
 .pop {
   -webkit-animation-name: pop;
   -webkit-animation-duration: 2s;
@@ -699,7 +699,7 @@ dt {
   font-size: 150%;
 }
 
-@media only screen and (min-width: 740px) {
+@media only screen and (min-width: 740px) and (orientation: landscape) {
   .edu, .skills, .experience, .git, .contact-mobile,
   .git-mobile, .contact,
   .skills,

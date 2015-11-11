@@ -18,7 +18,6 @@ var Application = function() {
     }
 
 
-
     function slideUpLanding() {
         var windowHeight = $(window).height();
         var landing = $(".landing");
@@ -35,9 +34,6 @@ var Application = function() {
                 scrollTop: $(".main-container").offset().top
             }, 1000);
 
-            //setTimeout(function(){
-            //    landing.hide();
-            //}, 1000);
 
             $(document).off("scroll");
 
@@ -199,16 +195,15 @@ var Application = function() {
                         animateLetter(("shine-mobile"), 1500);
                     }
                     else {
-                        animateLetter('shine',3000);
+                        animateLetter('shine-mobile shine',3000);
                     }
-
                     break;
                 case "three-d":
                     if (window.matchMedia("(max-width:740px)").matches) {
                         animateLetter(("three-d-mobile"), 500);
                     }
                     else {
-                        animateLetter('three-d', 1500);
+                        animateLetter('three-d-mobile three-d', 1500);
                     }
                     break;
                 case "pop":
