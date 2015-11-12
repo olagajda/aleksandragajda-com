@@ -626,7 +626,8 @@ ul li:last-child {
 }
 
 .edu, .skills, .experience, .git, .contact-mobile,
-.git-mobile, .contact {
+.git-mobile,
+.linkedin-mobile, .linkedin, .contact {
   font-family: "oswaldlight", sans-serif;
   font-size: 2vw;
   position: absolute;
@@ -647,9 +648,15 @@ ul li:last-child {
 }
 
 .git, .contact-mobile,
-.git-mobile {
+.git-mobile,
+.linkedin-mobile {
   bottom: 65%;
   left: 60%;
+}
+
+.linkedin {
+  bottom: 25%;
+  left: 50%;
 }
 
 .contact-mobile a:link,
@@ -659,7 +666,11 @@ ul li:last-child {
 .git-mobile a:link,
 .git-mobile a:visited,
 .git-mobile a:hover,
-.git-mobile a:active {
+.git-mobile a:active,
+.linkedin-mobile a:link,
+.linkedin-mobile a:visited,
+.linkedin-mobile a:hover,
+.linkedin-mobile a:active {
   text-decoration: underline;
   color: black;
 }
@@ -701,24 +712,29 @@ dt {
 
 @media only screen and (min-width: 740px) and (orientation: landscape) {
   .edu, .skills, .experience, .git, .contact-mobile,
-  .git-mobile, .contact,
+  .git-mobile,
+  .linkedin-mobile, .linkedin, .contact,
   .skills,
   .experience,
   .git,
   .contact-mobile,
   .git-mobile,
+  .linkedin-mobile,
   .contact,
   .contact-mobile {
     z-index: 3;
   }
   .edu dt, .skills dt, .experience dt, .git dt, .contact-mobile dt,
-  .git-mobile dt, .contact dt,
+  .git-mobile dt,
+  .linkedin-mobile dt, .linkedin dt, .contact dt,
   .edu dd,
   .skills dd,
   .experience dd,
   .git dd,
   .contact-mobile dd,
   .git-mobile dd,
+  .linkedin-mobile dd,
+  .linkedin dd,
   .contact dd,
   .edu h2,
   .skills h2,
@@ -726,6 +742,8 @@ dt {
   .git h2,
   .contact-mobile h2,
   .git-mobile h2,
+  .linkedin-mobile h2,
+  .linkedin h2,
   .contact h2,
   .edu p,
   .skills p,
@@ -733,6 +751,8 @@ dt {
   .git p,
   .contact-mobile p,
   .git-mobile p,
+  .linkedin-mobile p,
+  .linkedin p,
   .contact p,
   .skills dt,
   .skills dd,
@@ -745,15 +765,19 @@ dt {
   .git dt,
   .contact-mobile dt,
   .git-mobile dt,
+  .linkedin-mobile dt,
   .git dd,
   .contact-mobile dd,
   .git-mobile dd,
+  .linkedin-mobile dd,
   .git h2,
   .contact-mobile h2,
   .git-mobile h2,
+  .linkedin-mobile h2,
   .git p,
   .contact-mobile p,
   .git-mobile p,
+  .linkedin-mobile p,
   .contact dt,
   .contact-mobile dt,
   .contact dd,
@@ -823,12 +847,14 @@ dt {
   }
 
   .edu, .skills, .experience, .git, .contact-mobile,
-  .git-mobile, .contact,
+  .git-mobile,
+  .linkedin-mobile, .linkedin, .contact,
   .skills,
   .experience,
   .git,
   .contact-mobile,
   .git-mobile,
+  .linkedin-mobile,
   .contact,
   .contact-mobile {
     font-family: "oswaldlight", sans-serif;

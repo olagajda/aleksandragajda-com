@@ -154,6 +154,13 @@ var Application = function() {
         });
     }
 
+    function goToLinkedin() {
+        $(".letter-9").on("click", function(){
+            window.open("https://www.linkedin.com/in/aleksandragajda", "_blank");
+            preventDefault();
+        });
+    }
+
     function mailMe() {
         $(".letter-15").on("click", function(){
             window.location.href = "mailto:hello@aleksandragajda.com";
@@ -223,6 +230,7 @@ var Application = function() {
                         knowMeMobile("3", "edu");
                         knowMeMobile("5", "skills");
                         knowMeMobile("7", "experience");
+                        knowMeMobile("9", "linkedin-mobile");
                         knowMeMobile("11", "git-mobile");
                         knowMeMobile("12", "sit-on-chair");
                         knowMeMobile("13", "bhagaskara");
@@ -237,6 +245,7 @@ var Application = function() {
                             knowMeMobile("3", "edu");
                             knowMeMobile("5", "skills");
                             knowMeMobile("7", "experience");
+                            knowMeMobile("9", "linkedin-mobile");
                             knowMeMobile("11", "git-mobile");
                             knowMeMobile("12", "sit-on-chair");
                             knowMeMobile("13", "bhagaskara");
@@ -249,10 +258,12 @@ var Application = function() {
                             knowMe("3", "edu", 1000);
                             knowMe("5", "skills", 1000);
                             knowMe("7", "experience", 1000);
+                            knowMe("9", "linkedin", 1000);
                             knowMe("11", "git", 1000);
                             knowMe("12", "sit-on-chair", 500);
                             knowMe("13", "bhagaskara", 500);
                             knowMe();
+                            goToLinkedin();
                             goToGithub();
                             mailMe();
 

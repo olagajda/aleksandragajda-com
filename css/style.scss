@@ -501,8 +501,16 @@ ul {
   left:60%;
 }
 
+.linkedin {
+  @extend .edu;
+  bottom: 25%;
+  left: 50%;
+
+}
+
 .contact-mobile,
-.git-mobile {
+.git-mobile,
+.linkedin-mobile{
   @extend .git;
   a:link,
   a:visited,
