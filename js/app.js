@@ -210,7 +210,7 @@ var Application = function() {
                         animateLetter(("three-d-mobile"), 500);
                     }
                     else {
-                        animateLetter('three-d-mobile three-d', 1500);
+                        animateLetter('three-d-mobile three-d', 1000);
                     }
                     break;
                 case "pop":
