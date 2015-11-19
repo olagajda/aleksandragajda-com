@@ -99,15 +99,29 @@ html, body {
 
 /* content */
 /* landing */
+body {
+  overflow: hidden;
+}
+
 .landing {
   font-family: "old_standard_ttregular", serif;
-  font-size: 4.7vw;
+  font-size: 4.4vw;
   height: 100%;
   margin-bottom: 10%;
 }
 
+.text {
+  vertical-align: middle;
+}
+
 .text span {
   text-decoration: underline;
+}
+
+.landing-arrow {
+  text-align: center;
+  margin-top: 1%;
+  cursor: pointer;
 }
 
 .main-container {
@@ -121,10 +135,6 @@ html, body {
 }
 
 /* buttons */
-.buttons {
-  display: none;
-}
-
 ul {
   position: absolute;
   padding-top: .2%;
@@ -171,7 +181,6 @@ ul li:last-child {
   margin: 0 auto;
   text-align: center;
   font-family: "old_standard_ttregular", serif;
-  display: none;
 }
 
 .letter {

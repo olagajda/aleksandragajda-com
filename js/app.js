@@ -25,14 +25,17 @@ var Application = function() {
         var buttons = $(".buttons");
         var name = $(".letters-all");
         var firstOption = $(".move");
+        $("body").css("overflow", "hidden");
 
         landing.css('padding', (windowHeight - landingTextHeight)/2 + 'px 0');
 
-        $(document).one('scroll', function() {
+        $(".landing-arrow").on('click', function() {
             $('html, body').animate({
 
                 scrollTop: $(".main-container").offset().top
             }, 1000);
+
+            $("body").css("overflow", "auto");
 
 
             $(document).off("scroll");
@@ -44,6 +47,26 @@ var Application = function() {
                 firstOption.trigger("click")
             }, 1000)
         });
+
+
+
+
+        //$(document).one('scroll', function() {
+        //    $('html, body').animate({
+        //
+        //        scrollTop: $(".main-container").offset().top
+        //    }, 1000);
+        //
+        //
+        //    $(document).off("scroll");
+        //
+        //    buttons.show();
+        //    name.show();
+        //
+        //    setTimeout(function(){
+        //        firstOption.trigger("click")
+        //    }, 1000)
+        //});
     }
 
     function colorLetter() {
@@ -202,7 +225,7 @@ var Application = function() {
                         animateLetter(("shine-mobile"), 1500);
                     }
                     else {
-                        animateLetter('shine-mobile shine',3000);
+                        animateLetter('shine-mobile shine',1500);
                     }
                     break;
                 case "three-d":
