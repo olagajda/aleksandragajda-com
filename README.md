@@ -1,6 +1,6 @@
 # aleksandragajda.com
 
-As a final project at the Coder's Lab I made my first official website. 
+As a final project at the Coder's Lab course I made my first official website. 
 
 I designed it and coded to make a funny game helping people remember my name.
 
